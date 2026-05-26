@@ -393,8 +393,8 @@ done
 
 ## Author
 
-**Tahmina Alijewa**
-*Software Engineering Student — Holberton School*
+**Tahmina Aliyeva**
+*Computer Science Student — Holberton School*
 
 ---
 
@@ -402,7 +402,7 @@ done
 
 Built with precision at **Holberton School**
 
-SQLite3 · SQL · Relational Algebra · Business Intelligence
+SQLite3 · SQL · Business Intelligence
 
 *10 customers · 12 products · 18 orders · 25 line items · 26 queries*
 
