@@ -1,65 +1,51 @@
-# 📊 Store Database Management System
-> **SQL Portfolio Project | Holberton School**
+# 📊 SQL Project: Store Management & Analytical Reporting
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![SQL](https://img.shields.io/badge/sql-%2300758f.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Verified-brightgreen?style=for-the-badge)
-
-A comprehensive backend database project focused on relational data modeling, analytical querying, and business intelligence reporting.
-
----
+This project is a comprehensive SQL-based database management system developed as part of the Holberton School curriculum. It covers everything from initial schema design to complex relational data analysis.
 
 ## 🏗 Database Architecture
-
-This project utilizes a normalized relational structure to ensure data consistency and eliminate redundancy. The architecture is composed of four primary entities:
-
+The database is built on a normalized relational model, ensuring data integrity through Primary and Foreign Key constraints.
 
 
-* **`customers`**: Managing user demographics and contact information.
-* **`products`**: Inventory management including categorization and unit pricing.
-* **`orders`**: Transactional headers linking customers to specific purchase events.
-* **`order_items`**: Detailed line items for each order, managing product-order associations and quantities.
 
----
-
-## 🔍 Analytical Modules
-
-The project is structured into **26 SQL scripts**, strategically divided into logical folders to represent a real-world development workflow:
-
-### 📁 Simple Queries
-*Fundamental data retrieval and sorting.*
-* Inventory overview and price-based sorting.
-* Unique category extraction for marketing analysis.
-
-### 📁 Conditional Queries
-*Precision filtering for targeted data sets.*
-* High-value product identification.
-* Geographical customer segmentation (e.g., Baku-based clients).
-* Date-range analysis for specific fiscal years.
-
-### 📁 Aggregate Functions
-*Numerical data processing and KPI reporting.*
-* Calculating average market prices across categories.
-* Total sales volume and stock movement analysis.
-* Quantitative distribution of products per category.
-
-### 📁 Join Queries
-*Complex relational data merging and reporting.*
-* **Customer Lifetime Value:** Calculating total expenditure per user.
-* **Order Tracking:** Detailed itemized reports for logistics.
-* **Churn Analysis:** Identifying inactive customers using `LEFT JOIN` operations.
-* **Ranking:** Performance tracking of top-purchasing clients.
+### Data Entities:
+* **`customers`**: Manages unique user profiles and demographics (e.g., location, email).
+* **`products`**: A categorized inventory with unit pricing.
+* **`orders`**: Transactional headers linking specific customers to purchase events.
+* **`order_items`**: A junction table that resolves the **Many-to-Many** relationship between orders and products, handling itemized quantities.
 
 ---
 
-## 🎯 Technical Implementation Details
+## 🛠 Project Modules & Query Logic
 
-* **Relational Integrity:** Implemented through Primary and Foreign Key constraints.
-* **Code Optimization:** Used Table Aliasing (`p`, `o`, `oi`) for clean, maintainable, and high-performance JOIN queries.
-* **Validation:** All scripts have been cross-tested within the `sqlite3` CLI environment.
-* **Structure:** Organized following the "Separation of Concerns" principle with dedicated folders for each query type.
+The project consists of **26 SQL scripts**, organized into 4 logical phases:
+
+### 1. Simple Queries
+* **Focus:** Core data extraction.
+* **Implementation:** Using `SELECT`, `DISTINCT`, and `ORDER BY` to audit inventory and customer lists.
+
+### 2. Conditional Queries
+* **Focus:** Data segmentation and pattern matching.
+* **Implementation:** Using `WHERE` clauses with `LIKE` (for email/domain filtering) and `BETWEEN` operators to isolate specific business data points.
+
+### 3. Aggregate Functions
+* **Focus:** Business Intelligence (BI) reporting.
+* **Implementation:** Using `GROUP BY` and `HAVING` to calculate KPIs such as:
+    * Average product pricing per category.
+    * Total units sold across the store.
+    * Frequency of orders per unique customer.
+
+### 4. Join Queries (Deep Relational Analysis)
+* **Focus:** Multi-table connectivity and revenue calculation.
+* **Implementation:** * **Complex Joins:** Linking 4 tables to calculate **Total Spent per Customer** (Price × Quantity).
+    * **Advanced Logic:** Utilizing `LEFT JOIN` to identify "Churn" or inactive customers who have never placed an order.
+    * **Top-N Analysis:** Identifying the top 5 customers based on purchase volume.
 
 ---
-**Developed by:** Tahmina Alijewa  
-**Environment:** SQLite 3  
-**Verified on:** May 2026
+
+## 🚀 Execution & Verification
+The integrity of all queries has been verified within the `sqlite3` environment. Each script was tested against the `store.db` to ensure zero syntax errors and accurate output.
+
+**Automated verification run:**
+```bash
+for file in */*.sql; do echo "Testing: $file"; sqlite3 store.db < "$file"; done
