@@ -1,0 +1,2 @@
+SELECT * FROM products
+WHERE price BETWEEN 20 AND 80
