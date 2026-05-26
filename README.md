@@ -394,7 +394,7 @@ done
 
 ## Author
 
-**Tahmina Aliyeva**
+**Tahmina Aliyeva**  
   **Computer Science Student** — Holberton School  
   **Finance Student** — Baku Engineering University
 
