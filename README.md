@@ -1,4 +1,5 @@
-# 🗄️ SQL Retail Store Management System
+#  SQL Store Project
+> **Assignment by Ruslan Hamidov | Holberton School Azerbaijan**
 
 ![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![SQL](https://img.shields.io/badge/Language-SQL-F29111?style=for-the-badge&logo=database&logoColor=white)
@@ -11,7 +12,7 @@
 
 ---
 
-## 📑 Table of Contents
+##  Table of Contents
 
 - [Project Overview](#project-overview)
 - [Database Architecture](#database-architecture)
@@ -395,6 +396,7 @@ done
 
 **Tahmina Aliyeva**
 *Computer Science Student — Holberton School*
+*Finance Student — Baku Engineering University*
 
 ---
 
